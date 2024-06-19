@@ -3,22 +3,30 @@ const margin = { top: 10, right: 10, bottom: 10, left: 10 };
 const width = +svg.attr("width") - margin.left - margin.right;
 const height = +svg.attr("height") - margin.top - margin.bottom;
 
+
 let allNodes = [
-    { id: 1, name: "Sarah Johnson", title: "Software Engineer" },
-    { id: 2, name: "Michael Smith", title: "Data Analyst" },
-    { id: 3, name: "Emily Davis", title: "Marketing Manager" },
-    { id: 4, name: "James Brown", title: "Product Designer" },
-    { id: 5, name: "Jessica Wilson", title: "Financial Advisor" },
-    { id: 6, name: "David Martinez", title: "Operations Manager" },
-    { id: 7, name: "Laura Garcia", title: "Human Resources Specialist" },
-    { id: 8, name: "Robert Miller", title: "Sales Executive" },
-    { id: 9, name: "Linda Anderson", title: "UX/UI Designer" },
-    { id: 10, name: "William Taylor", title: "Project Manager" }
+    { id: 1, name: "Sarah Johnson", title: "End User", colour: "black" },
+    { id: 2, name: "Francis", title: "Assessor", colour: "green" },
+    { id: 3, name: "Emily", title: "IT", colour: "green" },
+    { id: 4, name: "Charlotte", title: "Customer Service", colour: "green" },
+    { id: 5, name: "Stevie", title: "Key Account Support", colour: "green" },
+    { id: 6, name: "David", title: "H&S Manager", colour: "blue" },
+    { id: 7, name: "Laura", title: "Line Manager", colour: "blue" },
+    { id: 8, name: "Robert", title: "Accounts Payable", colour: "blue" },
+    { id: 9, name: "Adam", title: "Purchasing", colour: "green" },
+    { id: 10, name: "Anthony", title: "Account Manager", colour: "green" },
+    { id: 11, name: "Hannah", title: "Appointments", colour: "green" }
 ];
 
+
 let allLinks = [
-    { source: 1, target: 2 }, { source: 1, target: 3 }, { source: 1, target: 4 }, { source: 1, target: 5 },
-    { source: 1, target: 6 }, { source: 1, target: 7 }, { source: 1, target: 8 }, { source: 1, target: 9 },
+    { source: 1, target: 7 },
+    { source: 7, target: 11 },
+    { source: 11, target: 1 },
+    { source: 1, target: 2 },
+    { source: 2, target: 3 },
+    { source: 2, target: 9 },
+    { source: 1, target: 8 }, { source: 1, target: 9 },
     { source: 1, target: 10 }, { source: 1, target: 2 }, { source: 1, target: 3 }, { source: 1, target: 4 },
     { source: 1, target: 5 }, { source: 1, target: 6 }, { source: 2, target: 1 }, { source: 2, target: 6 },
     { source: 2, target: 7 }, { source: 2, target: 8 }, { source: 3, target: 1 }, { source: 3, target: 4 },
