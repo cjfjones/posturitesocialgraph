@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Graph</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        svg { border: 1px solid black; }
+        button { margin: 10px; padding: 10px; }
+        .pulsing {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { r: 10; }
+            50% { r: 12; }
+            100% { r: 10; }
+        }
+    </style>
+</head>
+<body>
+    <button id="addElementBtn">Add Element</button>
+    <svg width="800" height="600"></svg>
+    <script src="script.js"></script>
+</body>
+</html>
