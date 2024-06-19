@@ -5,7 +5,7 @@ const height = +svg.attr("height") - margin.top - margin.bottom;
 
 
 let allNodes = [
-    { id: 1, name: "Sarah Johnson", title: "End User", colour: "black" },
+    { id: 1, name: "Sarah", title: "End User", colour: "black" },
     { id: 2, name: "Francis", title: "Assessor", colour: "green" },
     { id: 3, name: "Emily", title: "IT", colour: "green" },
     { id: 4, name: "Charlotte", title: "Customer Service", colour: "green" },
@@ -72,9 +72,12 @@ function ticked() {
         .attr("y2", d => Math.max(margin.top, Math.min(height - margin.bottom, d.target.y)));
 }
 
+
 function getNodeColor(id) {
-    return id === 1 ? "green" : (id % 2 === 0 ? "blue" : "red");
+    const node = allNodes.find(node => node.id === id);
+    return node ? node.colour : "red";
 }
+
 
 function update() {
     node = node.data(nodes, d => d.id)
