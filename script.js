@@ -149,6 +149,14 @@ function drag(simulation) {
 d3.select("#addElementBtn").on("click", () => {
     if (currentIndex < allNodes.length) {
         nodes.push(allNodes[currentIndex]);
+        if (currentIndex > 0) {
+            const sourceId = allNodes[currentIndex - 1].id;
+            const targetId = allNodes[currentIndex].id;
+            const linkExists = allLinks.some(link => (link.source === sourceId && link.target === targetId) || (link.source === targetId && link.target === sourceId));
+            if (linkExists) {
+                links.push({ source: sourceId, target: targetId });
+            }
+        }
     } else if (currentIndex < allNodes.length + allLinks.length) {
         links.push(allLinks[currentIndex - allNodes.length]);
     } else {
