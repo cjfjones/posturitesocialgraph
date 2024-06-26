@@ -6,24 +6,24 @@ const height = +svg.attr("height") - margin.top - margin.bottom;
 
 let allNodes = [
     { id: 1, name: "Sarah", title: "End User", colour: "black" },
-    { id: 2, name: "Francis", title: "Assessor", colour: "green" },
-    { id: 3, name: "Emily", title: "IT", colour: "green" },
-    { id: 4, name: "Charlotte", title: "Customer Service", colour: "green" },
+    { id: 2, name: "Laura", title: "Line Manager", colour: "blue" },
+    { id: 3, name: "Hannah", title: "Appointments", colour: "green" }
+    { id: 4, name: "Francis", title: "Assessor", colour: "green" },
+    { id: 11, name: "Emily", title: "IT", colour: "green" },
+    { id: 7, name: "Charlotte", title: "Customer Service", colour: "green" },
     { id: 5, name: "Stevie", title: "Key Account Support", colour: "green" },
     { id: 6, name: "David", title: "H&S Manager", colour: "blue" },
-    { id: 7, name: "Laura", title: "Line Manager", colour: "blue" },
     { id: 8, name: "Robert", title: "Accounts Payable", colour: "blue" },
     { id: 9, name: "Adam", title: "Purchasing", colour: "green" },
     { id: 10, name: "Anthony", title: "Account Manager", colour: "green" },
-    { id: 11, name: "Hannah", title: "Appointments", colour: "green" }
 ];
 
 
 let allLinks = [
-    { source: 1, target: 7 },
-    { source: 7, target: 11 },
-    { source: 11, target: 1 },
     { source: 1, target: 2 },
+    { source: 2, target: 3 },
+    { source: 1, target: 4 },
+    { source: 4, target: 11 },
     { source: 2, target: 3 },
     { source: 2, target: 9 },
     { source: 1, target: 8 }, { source: 1, target: 9 },
