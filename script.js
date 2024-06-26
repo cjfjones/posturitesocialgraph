@@ -7,7 +7,7 @@ const height = +svg.attr("height") - margin.top - margin.bottom;
 let allNodes = [
     { id: 1, name: "Mary", title: "End User", colour: "black" },
     { id: 2, name: "Laura", title: "Line Manager", colour: "blue" },
-    { id: 3, name: "Hannah", title: "Appointments", colour: "green" }
+    { id: 3, name: "Hannah", title: "Appointments", colour: "green" },
     { id: 4, name: "Francis", title: "Assessor", colour: "green" },
     { id: 11, name: "Emily", title: "IT", colour: "green" },
     { id: 7, name: "Charlotte", title: "Customer Service", colour: "green" },
@@ -15,7 +15,7 @@ let allNodes = [
     { id: 6, name: "David", title: "H&S Manager", colour: "blue" },
     { id: 8, name: "Robert", title: "Accounts Payable", colour: "blue" },
     { id: 9, name: "Adam", title: "Purchasing", colour: "green" },
-    { id: 10, name: "Anthony", title: "Account Manager", colour: "green" },
+    { id: 10, name: "Anthony", title: "Account Manager", colour: "green" }
 ];
 
 
