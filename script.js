@@ -5,7 +5,7 @@ const height = +svg.attr("height") - margin.top - margin.bottom;
 
 
 let allNodes = [
-    { id: 1, name: "Sarah", title: "End User", colour: "black" },
+    { id: 1, name: "Mary", title: "End User", colour: "black" },
     { id: 2, name: "Laura", title: "Line Manager", colour: "blue" },
     { id: 3, name: "Hannah", title: "Appointments", colour: "green" }
     { id: 4, name: "Francis", title: "Assessor", colour: "green" },
@@ -84,11 +84,25 @@ function update() {
         .join(
             enter => {
                 const g = enter.append("g");
-                g.append("circle")
-                    .attr("r", 10)
-                    .attr("fill", d => getNodeColor(d.id))
-                    .attr("class", "pulsing")
-                    .call(drag(simulation));
+
+                // Append an image instead of a circle for nodes with green color
+                g.each(function (d) {
+                    const node = d3.select(this);
+                    if (getNodeColor(d.id) === "green") {
+                        node.append("image")
+                            .attr("xlink:href", "https://yt3.googleusercontent.com/ytc/AIdro_lt3_L1YVYRdqE6WT4W-0FMYiBF-8wlDfihenp32zUeTGA=s176-c-k-c0x00ffffff-no-rj")
+                            .attr("width", 20) // Adjust the size as needed
+                            .attr("height", 20) // Adjust the size as needed
+                            .attr("x", -10) // Adjust to center the image on the node's position
+                            .attr("y", -10); // Adjust to center the image on the node's position
+                    } else {
+                        node.append("circle")
+                            .attr("r", 10)
+                            .attr("fill", d => getNodeColor(d.id))
+                            .attr("class", "pulsing");
+                    }
+                });
+
                 g.append("title")
                     .text(d => `${d.name}\n${d.title}`);
                 g.append("text")
@@ -98,9 +112,33 @@ function update() {
                 return g;
             },
             update => {
+                update.each(function (d) {
+                    const node = d3.select(this);
+                    if (getNodeColor(d.id) === "green") {
+                        node.select("circle").remove(); // Remove existing circle if any
+                        const image = node.select("image");
+                        if (image.empty()) { // Add image if it doesn't exist
+                            node.append("image")
+                                .attr("xlink:href", "https://yt3.googleusercontent.com/ytc/AIdro_lt3_L1YVYRdqE6WT4W-0FMYiBF-8wlDfihenp32zUeTGA=s176-c-k-c0x00ffffff-no-rj")
+                                .attr("width", 20) // Adjust the size as needed
+                                .attr("height", 20) // Adjust the size as needed
+                                .attr("x", -10) // Adjust to center the image on the node's position
+                                .attr("y", -10); // Adjust to center the image on the node's position
+                        }
+                    } else {
+                        node.select("image").remove(); // Remove existing image if any
+                        const circle = node.select("circle");
+                        if (circle.empty()) { // Add circle if it doesn't exist
+                            node.append("circle")
+                                .attr("r", 10)
+                                .attr("fill", d => getNodeColor(d.id))
+                                .attr("class", "pulsing");
+                        }
+                    }
+                });
+
                 update.select("title").text(d => `${d.name}\n${d.title}`);
                 update.select("text").text(d => d.name);
-                update.select("circle").attr("fill", d => getNodeColor(d.id));
                 return update;
             },
             exit => exit.remove()
@@ -121,6 +159,7 @@ function update() {
 
     console.log(`Current node count: ${nodes.length}`);
 }
+
 
 function drag(simulation) {
     function dragstarted(event, d) {
