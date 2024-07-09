@@ -118,7 +118,7 @@ function update() {
             },
             update => {
                 update.select("circle")
-                    .attr("r", 70) // Ensure the radius is updated
+                    .attr("r", 30) // Ensure the radius is updated
                     .attr("fill", d => getNodeColor(d.id))
                     .attr("class", "pulsing-subtle")
                     .attr("stroke", "white")
@@ -129,9 +129,10 @@ function update() {
 
                 // Update the position of the labels for existing nodes
                 update.select("text")
-                    .attr("dy", ".35em")
+                    .attr("dy", ".25em")
                     .attr("text-anchor", "middle")
                     .attr("fill", "white")
+                    .attr("font-size", "20px")
                     .text(d => d.name);
 
                 return update;
@@ -181,30 +182,30 @@ svg.on("click", () => {
 
 
 let allNodes = [
-    { id: 1, name: "Marketing", title: "", colour: "green" },
+    { id: 1, name: "Marketing", title: "", colour: "#006340" },
     { id: 2, name: "Line Manager", title: "", colour: "blue" },
     { id: 3, name: "Skye", title: "End User", colour: "black" },
     { id: 4, name: "H&S", title: "", colour: "blue" },
-    { id: 5, name: "Contact Us", title: "", colour: "green" },
-    { id: 6, name: "Regional Lead", title: "", colour: "green" },
-    { id: 7, name: "Account Manager", title: "", colour: "green" },
-    { id: 8, name: "Appointments", title: "", colour: "green" },
-    { id: 9, name: "Assessor", title: "", colour: "green" },
-    { id: 10, name: "IT", title: "", colour: "green" },
-    { id: 11, name: "Quotes", title: "", colour: "green" },
-    { id: 12, name: "Orders", title: "", colour: "green" },
-    { id: 13, name: "Credit Control", title: "", colour: "green" },
-    { id: 14, name: "TVS", title: "", colour: "green" },
-    { id: 15, name: "Aftercare", title: "", colour: "green" },
-    { id: 16, name: "Purchasing", title: "", colour: "green" },
-    { id: 17, name: "Install Tech", title: "", colour: "green" },
-    { id: 18, name: "Key Account Support", title: "", colour: "green" },
-    { id: 19, name: "Managed Service", title: "", colour: "green" },
-    { id: 20, name: "Enablement", title: "", colour: "green" },
-    { id: 21, name: "Projects", title: "", colour: "green" },
-    { id: 22, name: "Bids", title: "", colour: "green" },
-    { id: 23, name: "Business Standards", title: "", colour: "green" },
-    { id: 24, name: "DSE Advice", title: "", colour: "green" },
+    { id: 5, name: "Contact Us", title: "", colour: "#006340" },
+    { id: 6, name: "Regional Lead", title: "", colour: "#006340" },
+    { id: 7, name: "Account Manager", title: "", colour: "#006340" },
+    { id: 8, name: "Appointments", title: "", colour: "#006340" },
+    { id: 9, name: "Assessor", title: "", colour: "#006340" },
+    { id: 10, name: "IT", title: "", colour: "#006340" },
+    { id: 11, name: "Quotes", title: "", colour: "#006340" },
+    { id: 12, name: "Orders", title: "", colour: "#006340" },
+    { id: 13, name: "Credit Control", title: "", colour: "#006340" },
+    { id: 14, name: "TVS", title: "", colour: "#006340" },
+    { id: 15, name: "Aftercare", title: "", colour: "#006340" },
+    { id: 16, name: "Purchasing", title: "", colour: "#006340" },
+    { id: 17, name: "Install Tech", title: "", colour: "#006340" },
+    { id: 18, name: "Key Account Support", title: "", colour: "#006340" },
+    { id: 19, name: "Managed Service", title: "", colour: "#006340" },
+    { id: 20, name: "Enablement", title: "", colour: "#006340" },
+    { id: 21, name: "Projects", title: "", colour: "#006340" },
+    { id: 22, name: "Bids", title: "", colour: "#006340" },
+    { id: 23, name: "Business Standards", title: "", colour: "#006340" },
+    { id: 24, name: "DSE Advice", title: "", colour: "#006340" },
     { id: 25, name: "Procurement", title: "", colour: "blue" },
     { id: 26, name: "Accounts Payable", title: "", colour: "blue" },
     { id: 27, name: "Legal", title: "", colour: "blue" },
@@ -213,7 +214,7 @@ let allNodes = [
     { id: 30, name: "Security", title: "", colour: "blue" },
     { id: 31, name: "Client HR/DEI", title: "", colour: "blue" },
     { id: 32, name: "Client HR", title: "", colour: "blue" },
-    { id: 33, name: "Finance", title: "", colour: "green" },
+    { id: 33, name: "Finance", title: "", colour: "#006340" },
 
 
 ];
