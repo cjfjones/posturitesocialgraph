@@ -58,10 +58,26 @@
             }
         }
 
+        #refreshButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <button id="refreshButton" onclick="refreshPage()">Refresh</button>
     <svg></svg>
     <script src="script.js"></script>
+    <script>
+        function refreshPage() {
+            location.reload();
+        }
+    </script>
 </body>
 </html>
