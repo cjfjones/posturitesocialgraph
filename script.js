@@ -118,7 +118,7 @@ function update() {
             },
             update => {
                 update.select("circle")
-                    .attr("r", 100) // Ensure the radius is updated
+                    .attr("r", 70) // Ensure the radius is updated
                     .attr("fill", d => getNodeColor(d.id))
                     .attr("class", "pulsing-subtle")
                     .attr("stroke", "white")
