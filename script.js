@@ -14,8 +14,8 @@ let links = [];
 let currentIndex = 0;
 
 const simulation = d3.forceSimulation(nodes)
-    .force("charge", d3.forceManyBody().strength(-4000)) // Increased the strength of repulsion
-    .force("link", d3.forceLink(links).id(d => d.id).distance(600).strength(1.5))
+    .force("charge", d3.forceManyBody().strength(-2000)) // Increased the strength of repulsion
+    .force("link", d3.forceLink(links).id(d => d.id).distance(500).strength(1.5))
     .force("center", d3.forceCenter(width / 2, height / 2))
     .force("x", d3.forceX(d => d.id === 1 ? width / 2 : (d.id % 2 === 0 ? width * 0.25 : width * 0.75)).strength(0.1))
     .force("y", d3.forceY(height / 2).strength(0.1))
@@ -98,7 +98,7 @@ function update() {
 
                 // Append a circle for nodes
                 g.append("circle")
-                    .attr("r", 100) // Increase the radius of the circles
+                    .attr("r", 80) // Increase the radius of the circles
                     .attr("fill", d => getNodeColor(d.id))
                     .attr("stroke", "white")
                     .attr("class", "pulsing")
@@ -132,7 +132,7 @@ function update() {
                     .attr("dy", ".25em")
                     .attr("text-anchor", "middle")
                     .attr("fill", "white")
-                    .attr("font-size", "16px")
+                    .attr("font-size", "14px")
                     .text(d => d.name);
 
                 return update;
