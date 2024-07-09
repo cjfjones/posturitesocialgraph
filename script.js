@@ -98,7 +98,7 @@ function update() {
 
                 // Append a circle for nodes
                 g.append("circle")
-                    .attr("r", 150) // Increase the radius of the circles
+                    .attr("r", 100) // Increase the radius of the circles
                     .attr("fill", d => getNodeColor(d.id))
                     .attr("stroke", "white")
                     .attr("class", "pulsing")
@@ -132,7 +132,7 @@ function update() {
                     .attr("dy", ".25em")
                     .attr("text-anchor", "middle")
                     .attr("fill", "white")
-                    .attr("font-size", "20px")
+                    .attr("font-size", "16px")
                     .text(d => d.name);
 
                 return update;
